@@ -49,6 +49,12 @@ func NewClient(accountSid, authToken string) *TwilioClient {
 	return &TwilioClient{client, accountSid, authToken}
 }
 
+// CustomClient replaces the default http.Client created on NewClient
+// with a http.Client that is user supplied.
+func (twiClient *TwilioClient) CustomClient(client *http.Client) {
+	twiClient.httpclient = client
+}
+
 // Request makes a REST resource or action request from twilio servers and
 // returns the response. The type of request is determined by the request
 // struct supplied.
