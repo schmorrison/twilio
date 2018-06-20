@@ -5,7 +5,7 @@ import "encoding/xml"
 type Client struct {
 	XMLName xml.Name `xml:"Client"`
 	Method  string   `xml:"method,attr,omitempty"`
-	Url     string   `xml:"URL,attr,omitempty"`
+	Url     string   `xml:"url,attr,omitempty"`
 	Name    string   `xml:",chardata"`
 }
 
